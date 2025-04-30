@@ -38,6 +38,9 @@ ul, ol {
 body {
     font-family: "Unbounded", sans-serif;
 }
+body.hide {
+    overflow: hidden;
+}
 
 .container {
     max-width: 1700px;
