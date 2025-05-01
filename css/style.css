@@ -117,9 +117,9 @@ body.hide {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 24px;
-  font-weight: 600;
-  font-size: 24px;
+  padding: 16px 26px 16px 24px;
+  font-weight: 400;
+  font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
   vertical-align: middle;
@@ -139,11 +139,11 @@ body.hide {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 24px 24px 24px 28px;
+  padding: 20px 24px 20px 27px;
   background: var(--Secondary, rgb(196, 0, 23));
   font-weight: 700;
-  font-size: 32px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 16px;
   letter-spacing: 0%;
   vertical-align: middle;
   color: var(--White-100, rgb(255, 255, 255));
@@ -151,10 +151,10 @@ body.hide {
   border-radius: 50px;
 }
 .header__phone svg {
-  margin-right: 24px;
+  margin-right: 15px;
 }
 .header__phone span {
-  margin-right: 16px;
+  margin-right: 8px;
   color: var(--White-50, rgba(255, 255, 255, 0.5));
 }
 
@@ -565,6 +565,7 @@ h1 {
   margin-bottom: 16px;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 
 .services__link {
@@ -586,6 +587,19 @@ h1 {
   background: var(--Black-5, rgba(0, 0, 0, 0.05));
   border: 1px solid var(--Black-5, rgba(0, 0, 0, 0.05));
   z-index: 2;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.services__link svg path {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.services__block.active .services__link {
+  background: rgb(193, 239, 164);
+}
+.services__block.active .services__link svg path {
+  fill: rgb(66, 137, 21);
 }
 
 .services__content {
@@ -914,6 +928,14 @@ h2 {
   overflow: visible;
 }
 
+.tabBlock {
+  display: none;
+}
+
+.tabBlock.active {
+  display: block;
+}
+
 .clean__block {
   width: 560px;
   margin-right: 16px;
@@ -1108,6 +1130,15 @@ h6 {
   -webkit-backdrop-filter: blur(50px);
           backdrop-filter: blur(50px);
   border-radius: 48px;
+  cursor: pointer;
+  position: relative;
+}
+
+.addmore__block.active .services__link {
+  background: rgb(193, 239, 164);
+}
+.addmore__block.active .services__link svg path {
+  fill: rgb(66, 137, 21);
 }
 
 .addmore__content {
@@ -1344,13 +1375,21 @@ h3 {
   border-radius: 64px;
   padding: 0 16px;
 }
-.form__numbers p {
+.form__numbers input {
+  width: 100px;
+  border: 0;
+  background: transparent;
+  color: var(--Primary, rgb(12, 135, 212));
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0%;
   vertical-align: middle;
-  color: var(--Primary, rgb(12, 135, 212));
+  text-align: end;
+}
+.form__numbers p {
+  -webkit-transform: translateX(-40px);
+          transform: translateX(-40px);
 }
 .form__numbers p span {
   font-family: "Inter", sans-serif;
@@ -1703,6 +1742,9 @@ h4 {
   color: var(--Black-50, rgba(0, 0, 0, 0.5));
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
+}
+.asked__block p {
+  padding-top: 16px;
 }
 
 .asked__btn.active .icon::after {
