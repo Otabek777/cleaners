@@ -25,7 +25,7 @@
                 <ul class="header__navbar">
                     <li><a href="#Services">Services</a></li>
                     <li><a href="#Prices">Prices</a></li>
-                    <li><a href="#Prices">Extra</a></li>
+                    <li><a href="#Extra">Extra</a></li>
                 </ul>
                 <button class="header__lang">
                     Español
@@ -2325,21 +2325,47 @@
             dots: false,
             arrows: true,
             draggable: false,
+            swipe: false
         });
         $('.clean__slider').slick({
             infinite: false,
             speed: 600,
             slidesToShow: 3,
-            variableWidth: true,
+            slidesToShow: 3,
+            // variableWidth: true,
             dots: false,
-            arrows: false
+            arrows: false,
+            responsive: [
+                {
+                breakpoint: 1025,
+                settings: {
+                    slidesToShow: 2,
+                },
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                },
+                }
+            ]
         });
         $('.addmore__slider').slick({
             infinite: false,
             slidesToShow: 4,
             slidesToScroll: 1,
             arrows: false,
-            dots: true
+            dots: true,
+            responsive: [
+                {
+                breakpoint: 1025,
+                settings: {
+                    slidesToShow: 3,
+                },
+                breakpoint: 1025,
+                settings: {
+                    slidesToShow: 1,
+                },
+                }
+            ]
         });
         
     </script>
