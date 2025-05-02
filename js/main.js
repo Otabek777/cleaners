@@ -5,6 +5,16 @@ $(window).scroll(function(){
         $(".header").removeClass("fixed");
     }
 });
+$(".header__burgir").click(function() {
+    $(this).toggleClass("active");
+    $(".header").toggleClass("active");
+    $("body").toggleClass("hide");
+});
+$(".header__navbar li a").click(function() {
+    $(".header__burgir").removeClass("active");
+    $(".header").removeClass("active");
+    $("body").removeClass("hide");
+});
 $(".asked__btn").click(function() {
     $(this).toggleClass("active");
 });
@@ -31,23 +41,6 @@ $(".services__block").click(function () {
 $(".addmore__block").click(function () {
     $(this).toggleClass("active");
 });
-
-function initTabs(containerSelector) {
-    $(containerSelector).each(function () {
-        const $container = $(this);
-
-        $container.find('.tabBtn').on("click", function () {
-            const target = $(this).data("target");
-
-            $container.find('.tabBtn').removeClass("active");
-            $container.find('.tabBlock').removeClass("active");
-
-            $(this).addClass("active");
-            $container.find("#" + target).addClass("active");
-        });
-    });
-}
-initTabs('.tabContainer');
 
 document.querySelectorAll('.counter').forEach(counter => {
     const input = counter.querySelector('input');

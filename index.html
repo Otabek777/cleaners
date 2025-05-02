@@ -40,6 +40,9 @@
                     <span>737 •</span>
                     100 1010
                 </a>
+                <button class="header__burgir">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -670,7 +673,7 @@
                     </div>
                     <div class="tabContent">
                         <div class="tabBlock active" id="tab1">
-                            <div class="clean__slider active">
+                            <div class="clean__slider">
                                 <div class="clean__wrap">
                                     <div class="clean__block">
                                         <div class="clean__top">
@@ -2370,16 +2373,33 @@
         
     </script>
     <script>
+        function initTabs(containerSelector) {
+            $(containerSelector).each(function () {
+                const $container = $(this);
+        
+                $container.find('.tabBtn').on("click", function () {
+                    const target = $(this).data("target");
+        
+                    $container.find('.tabBtn').removeClass("active");
+                    $container.find('.tabBlock').removeClass("active");
+        
+                    $(this).addClass("active");
+                    $container.find("#" + target).addClass("active");
+                });
+            });
+        }
+        initTabs('.tabContainer');
+
         $(document).ready(function() {
             $(".beforeafter").twentytwenty({
-            default_offset_pct: 0.5, // сколько показывать 'изображение до' в процентах (максимально 1) сразу после загрузки страницы
-            orientation: 'horizontal', // ориентация слайдера ('horizontal' или 'vertical')
-            before_label: 'before', // подпись 'до'
-            after_label: 'after', // подпись 'после'
-            no_overlay: false, // не показывать затемнение с надписями 'до' и 'после'
-            move_slider_on_hover: false, // двигать "бегунок" слайдера вместе с курсором мыши
-            move_with_handle_only: true, // двигать слайдер только за его "бегунок"
-            click_to_move: false // разрешить перемещение "бегунка" слайдера по клику на изображении
+                default_offset_pct: 0.5, // сколько показывать 'изображение до' в процентах (максимально 1) сразу после загрузки страницы
+                orientation: 'horizontal', // ориентация слайдера ('horizontal' или 'vertical')
+                before_label: 'before', // подпись 'до'
+                after_label: 'after', // подпись 'после'
+                no_overlay: false, // не показывать затемнение с надписями 'до' и 'после'
+                move_slider_on_hover: false, // двигать "бегунок" слайдера вместе с курсором мыши
+                move_with_handle_only: true, // двигать слайдер только за его "бегунок"
+                click_to_move: false // разрешить перемещение "бегунка" слайдера по клику на изображении
             });
         });
     </script>
