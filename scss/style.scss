@@ -1697,3 +1697,14 @@ h4 {
         margin-bottom: 40px;
     }
 }
+
+// media
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+        padding: 0 16px;
+    }
+    section {
+        display: none;
+    }
+}
