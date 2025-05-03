@@ -13,9 +13,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+        .scroll-container {
+            /* Делаем контейнер прокручиваемым */
+            overflow-y: scroll; /* или auto */
+            height: 100vh; /* Занимает всю высоту окна */
+            scroll-snap-type: y mandatory;
+        }
+    </style>
     <title data-i18n="1"></title>
 </head>
-<body>
+<body class="scroll-container">
     <header class="header">
         <div class="container">
             <div class="header__box">
@@ -2206,14 +2214,32 @@
             </div>
         </footer>
     </main>
-
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.event.move.js" type="text/javascript"></script>
     <script src="js/jquery.twentytwenty.js" type="text/javascript"></script>
-    <script src="js/SmoothScroll.js"></script>
     <script src="js/main.js"></script>
     <script src="slick-1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <!-- Lenis -->
+    <script>
+        // --- Инициализация Lenis ---
+        const lenis = new Lenis({
+            wrapper: document.querySelector('.scroll-container'), // Укажите, если скролл НЕ на window/body
+            lerp: 0.1, // Коэффициент плавности (меньше = плавнее)
+            duration: 1.2, // Длительность анимации (альтернатива lerp)
+            smoothTouch: true, // Плавный скролл на тач-устройствах
+        });
 
+        // Функция, которая будет вызываться на каждом кадре анимации
+        function raf(time) {
+            lenis.raf(time); // Обновляем состояние Lenis
+            requestAnimationFrame(raf); // Запрашиваем следующий кадр
+        }
+
+        // Запускаем цикл анимации
+        requestAnimationFrame(raf);
+    </script>
+    <!-- Slick Slider -->
     <script>
         $('.befaft__slider').slick({
             infinite: false,
@@ -2266,6 +2292,7 @@
             ]
         });
     </script>
+    <!-- Tab -->
     <script>
         function initTabs(containerSelector) {
             $(containerSelector).each(function () {
@@ -2283,7 +2310,9 @@
             });
         }
         initTabs('.tabContainer');
-
+    </script>
+    <!-- After Before -->
+    <script>
         $(document).ready(function() {
             $(".beforeafter").twentytwenty({
                 default_offset_pct: 0.5, // сколько показывать 'изображение до' в процентах (максимально 1) сразу после загрузки страницы

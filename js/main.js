@@ -1,10 +1,12 @@
+// Header Fixed
 $(window).scroll(function(){
-    if ( $(this).scrollTop() > 1) {
+    if ( $(this).scrollTop() > 50) {
         $(".header").addClass("fixed");
     } else {
         $(".header").removeClass("fixed");
     }
 });
+// Header Burgir
 $(".header__burgir").click(function() {
     $(this).toggleClass("active");
     $(".header").toggleClass("active");
@@ -15,9 +17,11 @@ $(".header__navbar li a").click(function() {
     $(".header").removeClass("active");
     $("body").removeClass("hide");
 });
+// Accordeon
 $(".asked__btn").click(function() {
     $(this).toggleClass("active");
 });
+// Modal
 $(".open-modal").click(function() {
     $(".modal").addClass("active");
     $("body").addClass("hide");
@@ -26,7 +30,7 @@ $(".modal__close").click(function() {
     $(".modal").removeClass("active");
     $("body").removeClass("hide");
 });
-
+// Header Link Smooth Scrolll Down
 $(function(){
     $('.header__navbar li a').click(function(){
         var target = $(this).attr('href');
@@ -34,14 +38,14 @@ $(function(){
         return false; 
     });
 });
-
+// Checkbox Product
 $(".services__block").click(function () {
     $(this).toggleClass("active");
 });
 $(".addmore__block").click(function () {
     $(this).toggleClass("active");
 });
-
+// Plus Minus
 document.querySelectorAll('.counter').forEach(counter => {
     const input = counter.querySelector('input');
     const plus = counter.querySelector('.plus');
