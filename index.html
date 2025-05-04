@@ -13,40 +13,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
-    <style>
-        .scroll-container {
-            /* Делаем контейнер прокручиваемым */
-            overflow-y: scroll; /* или auto */
-            height: 100vh; /* Занимает всю высоту окна */
-            scroll-snap-type: y mandatory;
-        }
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .is-visible {
-            opacity: 1;
-            transform: translateY(0); /* Возвращается на место */
-            /* transform: scale(1); */
-            /* filter: blur(0); */
-        }
-        .transition-delay2 {
-            transition-delay: 0.2s;
-        }
-        .transition-delay4 {
-            transition-delay: 0.4s;
-        }
-        .transition-delay6 {
-            transition-delay: 0.6s;
-        }
-        .transition-delay8 {
-            transition-delay: 0.8s;
-        }
-        .transition-delay10 {
-            transition-delay: 1s;
-        }
-    </style>
     <title data-i18n="1"></title>
 </head>
 <body class="scroll-container">
@@ -2247,24 +2213,6 @@
     <script src="slick-1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <!-- Lenis -->
-    <!-- <script>
-        // --- Инициализация Lenis ---
-        const lenis = new Lenis({
-            wrapper: document.querySelector('.scroll-container'), // Укажите, если скролл НЕ на window/body
-            lerp: 0.1, // Коэффициент плавности (меньше = плавнее)
-            duration: 1.2, // Длительность анимации (альтернатива lerp)
-            smoothTouch: true, // Плавный скролл на тач-устройствах
-        });
-
-        // Функция, которая будет вызываться на каждом кадре анимации
-        function raf(time) {
-            lenis.raf(time); // Обновляем состояние Lenis
-            requestAnimationFrame(raf); // Запрашиваем следующий кадр
-        }
-
-        // Запускаем цикл анимации
-        requestAnimationFrame(raf);
-    </script> -->
     <script>
         // --- Инициализация Lenis (ОСТАВЛЯЕМ ТОЛЬКО ОДНУ!) ---
         const lenis = new Lenis({
@@ -2317,9 +2265,9 @@
                     observer.unobserve(entry.target);
                 }
                 // Для анимации при уходе из видимости:
-                // else {
-                //   entry.target.classList.remove('is-visible');
-                // }
+                else {
+                  entry.target.classList.remove('is-visible');
+                }
             });
         };
 
@@ -2348,7 +2296,6 @@
             speed: 600,
             slidesToShow: 3,
             slidesToShow: 3,
-            // variableWidth: true,
             dots: false,
             arrows: false,
             responsive: [
