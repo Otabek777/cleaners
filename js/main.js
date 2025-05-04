@@ -24,19 +24,28 @@ $(".asked__btn").click(function() {
 // Modal
 $(".open-modal").click(function() {
     $(".modal").addClass("active");
+    setTimeout(function() {
+        $(".modal").addClass("opacity");
+    },100);
     $("body").addClass("hide");
 });
 $(".modal__close").click(function() {
-    $(".modal").removeClass("active");
+    $(".modal").removeClass("opacity");
+    setTimeout(function() {
+        $(".modal").removeClass("active");
+    },300);
     $("body").removeClass("hide");
 });
 // Header Link Smooth Scrolll Down
-$(function(){
-    $('.header__navbar li a').click(function(){
-        var target = $(this).attr('href');
-        $('html, body').animate({scrollTop: $(target).offset().top}, 800);
-        return false; 
-    });
+$('.header__navbar li a, .header__logo').click(function(e){
+    e.preventDefault(); // предотвращает переход по ссылке
+    var target = $(this).attr('href');
+
+    if (target && $(target).length) {
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 800);
+    }
 });
 // Checkbox Product
 $(".services__block").click(function () {
