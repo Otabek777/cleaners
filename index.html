@@ -20,6 +20,32 @@
             height: 100vh; /* Занимает всю высоту окна */
             scroll-snap-type: y mandatory;
         }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0); /* Возвращается на место */
+            /* transform: scale(1); */
+            /* filter: blur(0); */
+        }
+        .transition-delay2 {
+            transition-delay: 0.2s;
+        }
+        .transition-delay4 {
+            transition-delay: 0.4s;
+        }
+        .transition-delay6 {
+            transition-delay: 0.6s;
+        }
+        .transition-delay8 {
+            transition-delay: 0.8s;
+        }
+        .transition-delay10 {
+            transition-delay: 1s;
+        }
     </style>
     <title data-i18n="1"></title>
 </head>
@@ -351,7 +377,7 @@
         <section class="banner">
             <div class="container">
                 <img src="img/banner.png" alt="" class="banner__img">
-                <div class="banner__wrap">
+                <div class="banner__wrap animate-on-scroll">
                     <h1 data-i18n="1">Clean Looks Good on You</h1>
                     <p data-i18n="1">The proof is in every room.</p>
                     <a href="#" class="banner__link" data-i18n="1">Book Now
@@ -405,7 +431,7 @@
         <section class="services" id="Services">
             <div class="container">
                 <div class="services__box">
-                    <div class="services__block">
+                    <div class="services__block animate-on-scroll">
                         <div class="services__link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
                                 <path d="M7.00023 10.17L16.1922 0.979004L17.6062 2.393L7.00023 12.999L0.63623 6.635L2.05023 5.221L7.00023 10.17Z" fill="black" fill-opacity="0.5"/>
@@ -450,7 +476,7 @@
                             <img src="img/img1.png" alt="">
                         </div>
                     </div>
-                    <div class="services__block">
+                    <div class="services__block animate-on-scroll transition-delay2">
                         <div class="services__link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
                                 <path d="M7.00023 10.17L16.1922 0.979004L17.6062 2.393L7.00023 12.999L0.63623 6.635L2.05023 5.221L7.00023 10.17Z" fill="black" fill-opacity="0.5"/>
@@ -495,7 +521,7 @@
                             <img src="img/img3.png" alt="">
                         </div>
                     </div>
-                    <div class="services__block">
+                    <div class="services__block animate-on-scroll">
                         <div class="services__link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
                                 <path d="M7.00023 10.17L16.1922 0.979004L17.6062 2.393L7.00023 12.999L0.63623 6.635L2.05023 5.221L7.00023 10.17Z" fill="black" fill-opacity="0.5"/>
@@ -540,7 +566,7 @@
                             <img src="img/img2.png" alt="">
                         </div>
                     </div>
-                    <div class="services__block">
+                    <div class="services__block animate-on-scroll transition-delay2">
                         <div class="services__link">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="13" viewBox="0 0 18 13" fill="none">
                                 <path d="M7.00023 10.17L16.1922 0.979004L17.6062 2.393L7.00023 12.999L0.63623 6.635L2.05023 5.221L7.00023 10.17Z" fill="black" fill-opacity="0.5"/>
@@ -594,7 +620,7 @@
                     <h2 data-i18n="1">Before and After: Real Cleaning Results</h2>
                     <p data-i18n="1">The proof is in every room.</p>
                 </div>
-                <div class="befaft__slider">
+                <div class="befaft__slider animate-on-scroll">
                     <div class="befaft__wrap">
                         <div class="befaft__block">
                             <div class="beforeafter" style="width: 100%; height: 100%;">
@@ -627,7 +653,7 @@
                             <button class="btn tabBtn" data-target="tab2" data-i18n="1">Business Plans</button>
                         </div>
                     </div>
-                    <div class="tabContent">
+                    <div class="tabContent animate-on-scroll">
                         <div class="tabBlock active" id="tab1">
                             <div class="clean__slider">
                                 <div class="clean__wrap">
@@ -1386,7 +1412,7 @@
                     <h2 data-i18n="1">Add More. Clean Better.</h2>
                     <p data-i18n="1">Choose from a range of add-ons for a deeper, more personalized clean.</p>
                 </div>
-                <div class="addmore__slider">
+                <div class="addmore__slider animate-on-scroll">
                     <div class="addmore__wrap">
                         <div class="addmore__block">
                             <div class="services__link">
@@ -1479,11 +1505,11 @@
             <div class="container">
                 <div class="form__box">
                     <div class="from__title">
-                        <h3 data-i18n="1">Customize Your Cleaning — Get a Quick Quote</h3>
-                        <p data-i18n="1">Build your perfect cleaning plan in less than a minute.</p>
+                        <h3 class="animate-on-scroll" data-i18n="1">Customize Your Cleaning — Get a Quick Quote</h3>
+                        <p class="animate-on-scroll transition-delay2" data-i18n="1">Build your perfect cleaning plan in less than a minute.</p>
                     </div>
-                    <div class="form__block tabContainer">
-                        <div class="form__wrap">
+                    <div class="form__block tabContainer animate-on-scroll">
+                        <div class="form__wrap animate-on-scroll">
                             <div class="wrap">
                                 <p class="form__title" data-i18n="1">Let’s Get Started</p>
                                 <p class="form__p" data-i18n="1">Choose whether it's a home or a business space.</p>
@@ -1496,7 +1522,7 @@
                             </div>
                         </div>
                         <div class="tabBlock active" id="tab1">
-                            <div class="form__wrap">
+                            <div class="form__wrap animate-on-scroll">
                                 <div class="wrap">
                                     <span class="form__price" data-i18n="1">+ $ 300</span>
                                     <p class="form__title" data-i18n="1">Deep Cleaning</p>
@@ -1512,7 +1538,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form__wrap">
+                            <div class="form__wrap animate-on-scroll">
                                 <div class="wrap">
                                     <span class="form__price" data-i18n="1">+ $ 100</span>
                                     <p class="form__title" data-i18n="1">How Many Bathrooms?</p>
@@ -1573,7 +1599,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form__wrap">
+                            <div class="form__wrap animate-on-scroll">
                                 <div class="wrap">
                                     <span class="form__price" data-i18n="1">+ 100</span>
                                     <p class="form__title" data-i18n="1">Extra Services</p>
@@ -1774,7 +1800,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form__wrap">
+                            <div class="form__wrap animate-on-scroll">
                                 <div class="wrap">
                                     <span class="form__price" data-i18n="1">$ 1900</span>
                                     <p class="form__title" data-i18n="1">Total</p>
@@ -2071,7 +2097,7 @@
                             </div>
                         </div>
 
-                        <button class="form__btn open-modal" data-i18n="1">Proceed to Checkout
+                        <button class="form__btn open-modal animate-on-scroll" data-i18n="1">Proceed to Checkout
                             <span data-i18n="1">$ 1’900</span>
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" fill="none">
@@ -2087,10 +2113,10 @@
             <div class="container">
                 <div class="asked__wrap">
                     <div class="asked__title">
-                        <h4 data-i18n="1">Got Questions? We’ve Got Answers</h4>
-                        <p data-i18n="1">Find quick answers to the most common cleaning service questions.</p>
+                        <h4 class="animate-on-scroll" data-i18n="1">Got Questions? We’ve Got Answers</h4>
+                        <p class="animate-on-scroll transition-delay2" data-i18n="1">Find quick answers to the most common cleaning service questions.</p>
                     </div>
-                    <div class="asked__right">
+                    <div class="asked__right animate-on-scroll transition-delay6">
                         <div class="wrap">
                             <div class="asked__btn" data-i18n="1">
                                 What areas do you serve?
@@ -2142,7 +2168,7 @@
         </section>
         <footer class="footer">
             <div class="container">
-                <div class="footer__wrap">
+                <div class="footer__wrap animate-on-scroll transition-delay2">
                     <div class="footer__box">
                         <div class="footer__left">
                             <a href="#" class="footer__logo">
@@ -2221,7 +2247,7 @@
     <script src="slick-1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <!-- Lenis -->
-    <script>
+    <!-- <script>
         // --- Инициализация Lenis ---
         const lenis = new Lenis({
             wrapper: document.querySelector('.scroll-container'), // Укажите, если скролл НЕ на window/body
@@ -2238,6 +2264,72 @@
 
         // Запускаем цикл анимации
         requestAnimationFrame(raf);
+    </script> -->
+    <script>
+        // --- Инициализация Lenis (ОСТАВЛЯЕМ ТОЛЬКО ОДНУ!) ---
+        const lenis = new Lenis({
+            // Важно: Убедитесь, что элемент '.scroll-container' существует в вашем HTML,
+            // иначе querySelector вернет null и Lenis может работать некорректно.
+            // Если скролл должен быть на всей странице (window/body), УДАЛИТЕ или закомментируйте строку 'wrapper'.
+            wrapper: document.querySelector('.scroll-container'),
+            lerp: 0.1,      // Коэффициент плавности (меньше = плавнее)
+            duration: 1.2,  // Длительность анимации (альтернатива lerp)
+            smoothTouch: true // Плавный скролл на тач-устройствах
+        });
+
+        // Опционально: если хотите что-то делать при скролле
+        // lenis.on('scroll', (e) => {
+        //   console.log(e) // Вывод информации о скролле в консоль
+        // })
+
+        // Функция, которая будет вызываться на каждом кадре анимации
+        function raf(time) {
+            lenis.raf(time); // Обновляем состояние Lenis
+            requestAnimationFrame(raf); // Запрашиваем следующий кадр
+        }
+
+        // Запускаем цикл анимации (ТОЛЬКО ОДИН РАЗ!)
+        requestAnimationFrame(raf);
+
+
+        // --- Настройка Intersection Observer для анимации (Этот блок остается без изменений) ---
+
+        // 1. Найти все элементы, которые нужно анимировать
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+        // 2. Настроить Observer
+        const observerOptions = {
+            // Если вы используете `wrapper` в Lenis, и этот контейнер имеет свой скроллбар,
+            // возможно, вам нужно указать его и здесь в `root`:
+            // root: document.querySelector('.scroll-container'),
+            // Если скролл на всей странице, оставляем `root: null`
+            root: null,
+            rootMargin: '0px', // Отступы вокруг viewport (или root)
+            threshold: 0.1     // % видимости элемента для срабатывания
+        };
+
+        // 3. Создать Callback-функцию (что делать при пересечении)
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Отписываемся, чтобы анимация сработала один раз
+                    observer.unobserve(entry.target);
+                }
+                // Для анимации при уходе из видимости:
+                // else {
+                //   entry.target.classList.remove('is-visible');
+                // }
+            });
+        };
+
+        // 4. Создать сам Observer
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        // 5. Начать наблюдение за каждым элементом
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
     </script>
     <!-- Slick Slider -->
     <script>
