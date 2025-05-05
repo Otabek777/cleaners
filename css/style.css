@@ -2238,8 +2238,8 @@ h4 {
   .befaft__slider .slick-prev {
     left: -0.5rem;
   }
-  .addmore__slider, .clean__slider {
-    padding: 0 var(--xxl);
+  .clean__wrap, .addmore__wrap {
+    padding: 0 0.2rem;
   }
   .form__box, .asked__wrap {
     padding: var(--xxl);
