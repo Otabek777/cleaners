@@ -45,7 +45,7 @@
 }
 
 /* Мобильные (до 576px) */
-@media (max-width: 576px) {
+@media (min-width: 300px) and (max-width: 576px) {
     :root {
         --zr: 0.25rem; 
         --xs: 0.5rem;   
@@ -54,7 +54,7 @@
         --lg: 0.9rem;  
         --xl: 1.25rem;    
         --xxl: 0.99rem; 
-        --hg: 2rem;
+        --hg: 1.25rem;
         --max: 2.1rem;  
     }
 }

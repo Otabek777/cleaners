@@ -949,8 +949,8 @@ h2 {
 
 .befaft__slider .slick-prev::after, .befaft__slider .slick-next::after {
   content: "";
-  width: var(--sm);
-  height: var(--sm);
+  width: 0.5rem;
+  height: 0.5rem;
   border: 0.0625rem solid #000;
   position: absolute;
   top: 50%;
@@ -1579,6 +1579,12 @@ h3 {
 }
 
 .form__numbers p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transform: translateX(-2.5rem);
   transform: translateX(-2.5rem);
 }
@@ -1586,6 +1592,7 @@ h3 {
 .form__numbers p span {
   font-family: "Inter", sans-serif;
   color: var(--Black-30, rgba(0, 0, 0, 0.3));
+  padding-left: 4px;
 }
 
 .form__numbers .minus {
@@ -2043,6 +2050,10 @@ h4 {
   position: relative;
 }
 
+.footer__soc a:last-child {
+  margin-right: 0;
+}
+
 .footer__soc a img {
   position: absolute;
   top: 50%;
@@ -2242,7 +2253,7 @@ h4 {
     padding: 0 0.2rem;
   }
   .form__box, .asked__wrap {
-    padding: var(--xxl);
+    padding: var(--max) var(--xxl);
   }
   .form__price {
     top: -0.6rem;
@@ -2319,13 +2330,33 @@ h4 {
   }
 }
 @media screen and (max-width: 992px) {
-  h2 {
+  .clean__top .wrap::before {
+    width: 0.25rem;
+  }
+  .clean__top .wrap {
+    padding-top: 0.25rem;
+    padding-left: 1rem;
+  }
+  .clean__top {
+    min-height: auto;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+  .clean__bottom {
+    padding: 1.5rem 1rem;
+  }
+  .addmore__img {
+    min-height: 220px;
+  }
+  .banner__link {
+    padding: 1rem 2rem;
+  }
+  h2, h3, h4 {
     font-size: var(--xl);
     line-height: var(--xl);
   }
   .clean__tab .btn span {
     display: inline-block;
-    margin-top: 6px;
+    margin-top: 0.25rem;
     margin-left: 0;
   }
   .header__navbar {
@@ -2428,12 +2459,21 @@ h4 {
   }
   .services__content {
     width: 100%;
-    padding: var(--hg);
+    padding: 2rem;
     padding-bottom: 0;
+  }
+  .services__link {
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 1rem;
+    right: 1rem;
+  }
+  .services__link svg {
+    width: 0.75rem;
   }
   .services__img {
     width: 100%;
-    min-height: 280px;
+    min-height: 220px;
   }
   .services__img img {
     width: 100%;
@@ -2470,8 +2510,16 @@ h4 {
     padding: var(--md);
   }
   .form__btn {
+    font-size: 0.75rem;
     min-height: auto;
-    padding: var(--xl) var(--xxl);
+    padding: 1rem 1.25rem;
+  }
+  .form__btn .icon {
+    display: none;
+  }
+  .form__btn span {
+    font-size: 0.5rem;
+    margin-left: auto;
   }
   .banner__img {
     width: 100%;
@@ -2510,8 +2558,25 @@ h4 {
     font-size: var(--md);
     line-height: var(--md);
   }
+  .clean__tab .box {
+    padding: 0.25rem;
+  }
   .clean__tab .btn {
-    padding: var(--md);
+    min-height: 48px;
+    font-size: 0.6rem;
+    padding: 0.25rem;
+    margin-right: 4px;
+  }
+  .clean__tab .btn span {
+    font-size: 0.5rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .form__title {
+    padding-right: 70px;
+  }
+  .form__price, .addmore__price {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
   }
   .befaft__block {
     height: 12rem;
@@ -2532,16 +2597,43 @@ h4 {
     margin: 0 3px;
   }
   .from .container {
-    padding-bottom: 4rem;
+    padding-bottom: var(--max);
   }
   .footer .container {
-    padding-top: 4rem;
+    padding-top: var(--max);
   }
   .footer__wrap {
     padding: var(--max) var(--md);
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    position: relative;
+  }
+  .form__wrap {
+    padding: 1.5rem 1rem;
+  }
+  .form__numbers {
+    padding: 0.5rem;
+  }
+  .form__numbers .plus, .form__numbers .minus {
+    width: 2rem;
+    height: 2rem;
   }
   .asked__block {
     padding-right: 4rem;
+  }
+  .footer__logo {
+    margin-bottom: 2rem;
+  }
+  .footer__copy {
+    width: 100%;
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    text-align: center;
+  }
+  .footer__soc a {
+    width: 2rem;
+    height: 2rem;
   }
 }
 @media screen and (max-width: 360px) {
@@ -2551,5 +2643,9 @@ h4 {
   .header__burgir {
     width: 24px;
     margin-left: 0.75rem;
+  }
+  .header__phone img {
+    width: 12px;
+    margin-right: 0.5rem;
   }
 }
