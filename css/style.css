@@ -178,6 +178,7 @@ body.hide {
   border-radius: 3.125rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  text-wrap: nowrap;
 }
 
 .header__phone:hover {
@@ -218,18 +219,9 @@ body.hide {
 }
 
 .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
+  display: block;
   width: 100%;
-  height: 100%;
-  overflow-y: scroll;
   background: #fff;
-  opacity: 0;
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -1620,6 +1612,7 @@ h3 {
   width: var(--hg);
   height: var(--hg);
   background: var(--Third, rgb(20, 40, 65));
+  border: 0;
   border-radius: 50%;
   position: relative;
 }
@@ -2330,6 +2323,22 @@ h4 {
   }
 }
 @media screen and (max-width: 992px) {
+  .switch {
+    min-width: 44px;
+    width: 44px;
+    height: 27px;
+    position: absolute;
+    top: 80px;
+    right: 1rem;
+  }
+  .sliderOffOn:before {
+    height: 19px;
+    width: 19px;
+  }
+  input:checked + .sliderOffOn:before {
+    -webkit-transform: translateX(16px);
+            transform: translateX(16px);
+  }
   .clean__top .wrap::before {
     width: 0.25rem;
   }
@@ -2648,4 +2657,96 @@ h4 {
     width: 12px;
     margin-right: 0.5rem;
   }
+}
+body.dark-mode {
+  background: #000;
+}
+body.dark-mode .header__logo {
+  background: url(../img/logo-black.svg) no-repeat center;
+  background-size: 100%;
+}
+body.dark-mode .header.active {
+  background: #1A1A1A;
+}
+body.dark-mode .header__burgir span {
+  background: #fff;
+}
+body.dark-mode .banner::after {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgb(0, 0, 0)));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+}
+body.dark-mode .header__navbar li a, body.dark-mode .header__lang, body.dark-mode h1, body.dark-mode .banner__wrap p, body.dark-mode h5, body.dark-mode .services__content p, body.dark-mode .services__check span, body.dark-mode .title, body.dark-mode h2, body.dark-mode h6, body.dark-mode .clean__top, body.dark-mode .clean__bottom ul li, body.dark-mode .clean__price span, body.dark-mode .clean__price, body.dark-mode .addmore__content, body.dark-mode h3, body.dark-mode .from__title, body.dark-mode .form__title, body.dark-mode .form__p, body.dark-mode .form__numbers p span, body.dark-mode .form__check label, body.dark-mode .asked__title, body.dark-mode h4, body.dark-mode .asked__btn, body.dark-mode .asked__block, body.dark-mode .banner__rating span {
+  color: #fff;
+}
+body.dark-mode .clean__price span.redcolor {
+  color: var(--Secondary, rgb(196, 0, 23));
+}
+body.dark-mode .services__block {
+  background: var(--White-30, rgba(255, 255, 255, 0.1));
+}
+body.dark-mode .services__link {
+  background: var(--Black-5, rgba(0, 0, 0, 0.5));
+}
+body.dark-mode .services__link path {
+  fill: #fff;
+}
+body.dark-mode .banner__rating .img {
+  position: relative;
+}
+body.dark-mode .banner__rating .img::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+body.dark-mode .clean__tab .box {
+  background: var(--White-30, rgba(255, 255, 255, 0.1));
+}
+body.dark-mode .clean__tab .btn {
+  color: #fff;
+}
+body.dark-mode .clean__top, body.dark-mode .clean__bottom {
+  background: var(--White-30, rgba(255, 255, 255, 0.1));
+}
+body.dark-mode .clean__block.clean2 .clean__top, body.dark-mode .clean__block.clean2 .clean__bottom {
+  background: var(--White-30, rgba(255, 255, 255, 0.15));
+}
+body.dark-mode .clean__top .wrap::before {
+  background: var(--White-30, rgba(255, 255, 255, 0.2));
+}
+body.dark-mode .addmore__block {
+  background: var(--White-30, rgba(255, 255, 255, 0.1));
+}
+body.dark-mode .addmore__slider .slick-dots li button:before {
+  color: #fff !important;
+}
+body.dark-mode .addmore__slider .slick-dots li.slick-active button:before {
+  color: var(--Primary, rgb(12, 135, 212)) !important;
+}
+body.dark-mode .form__wrap {
+  background: var(--White-30, rgba(255, 255, 255, 0.1));
+}
+body.dark-mode .form__lines .lines span {
+  background: var(--Black-5, rgba(0, 0, 0, 0.5));
+}
+body.dark-mode .form__lines .lines span.active {
+  background: var(--Primary, rgb(12, 135, 212));
+}
+body.dark-mode .form__lines .lines span.boll {
+  background: var(--Primary, rgb(12, 135, 212));
+}
+body.dark-mode .form__numbers .minus {
+  background: var(--White-30, rgba(255, 255, 255, 0.8));
+}
+body.dark-mode .form__check label .icon {
+  background: var(--White-30, rgba(255, 255, 255, 0.8));
+}
+body.dark-mode .asked__right {
+  background: var(--White-30, rgba(255, 255, 255, 0.1));
+}
+body.dark-mode .asked__right .icon {
+  background: var(--White-30, rgba(255, 255, 255, 0.8));
 }

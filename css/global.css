@@ -1,5 +1,7 @@
-@import url(style.css);
 @import url(lenis.css);
+@import url(help.css);
+@import url(switch.css);
+@import url(style.css);
 
 /* Переменные */
 :root {

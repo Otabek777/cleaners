@@ -172,6 +172,7 @@
     margin-left: auto;
     border-radius: 3.125rem;
     transition: all .3s ease;
+    text-wrap: nowrap;
   }
   .header__phone:hover {
     opacity: 0.8;
@@ -211,17 +212,16 @@
   }
   
   .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
+    display: block;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // z-index: 999;
     width: 100%;
-    height: 100%;
-    overflow-y: scroll;
+    // height: 100%;
     background: #fff;
-    opacity: 0;
-    transform: scale(0.9);
+    // opacity: 0;
+    // transform: scale(0.9);
     transition: all .3s ease;
   }
   
@@ -1599,6 +1599,7 @@
     width: var(--hg);
     height: var(--hg);
     background: var(--Third, rgb(20, 40, 65));
+    border: 0;
     border-radius: 50%;
     position: relative;
   }
@@ -2299,6 +2300,21 @@
     }
   }
   @media screen and (max-width: 992px) {
+    .switch {
+      min-width: 44px;
+      width: 44px;
+      height: 27px;
+      position: absolute;
+      top: 80px;
+      right: 1rem;
+    }
+    .sliderOffOn:before {
+      height: 19px;
+      width: 19px;
+    }
+    input:checked + .sliderOffOn:before {
+      transform: translateX(16px);
+    }
     .clean__top .wrap::before {
       width: 0.25rem;
     }
@@ -2602,5 +2618,96 @@
   .header__phone img {
     width: 12px;
     margin-right: 0.5rem;
+  }
+}
+body.dark-mode {
+  background: #000;
+  .header__logo {
+    background: url(../img/logo-black.svg) no-repeat center;
+    background-size: 100%;
+  }
+  .header.active {
+    background: #1A1A1A;
+  }
+  .header__burgir span {
+    background: #fff;
+  }
+  .banner::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  }
+  .header__navbar li a, .header__lang, h1, .banner__wrap p, h5, .services__content p, .services__check span, .title, h2, h6, .clean__top, .clean__bottom ul li, .clean__price span, .clean__price, .addmore__content, h3, .from__title, .form__title, .form__p, .form__numbers p span, .form__check label, .asked__title, h4, .asked__btn, .asked__block, .banner__rating span {
+    color: #fff;
+  }
+  .clean__price span.redcolor {
+    color: var(--Secondary, rgb(196, 0, 23));
+  }
+  .services__block {
+    background: var(--White-30, rgba(255, 255, 255, 0.1));
+  }
+  .services__link {
+    background: var(--Black-5, rgba(0, 0, 0, 0.5));
+    path {
+      fill: #fff;
+    }
+  }
+  .banner__rating .img {
+    position: relative;
+  }
+  .banner__rating .img::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  .clean__tab .box {
+    background: var(--White-30, rgba(255, 255, 255, 0.1));
+  }
+  .clean__tab .btn {
+    color: #fff;
+  }
+  .clean__top, .clean__bottom {
+    background: var(--White-30, rgba(255, 255, 255, 0.1));
+  }
+  .clean__block.clean2 .clean__top, .clean__block.clean2 .clean__bottom {
+    background: var(--White-30, rgba(255, 255, 255, 0.15));
+  }
+  .clean__top .wrap::before {
+    background: var(--White-30, rgba(255, 255, 255, 0.2));
+  }
+  .addmore__block {
+    background: var(--White-30, rgba(255, 255, 255, 0.1));
+  }
+  .addmore__slider .slick-dots li button:before {
+    color: #fff !important;
+  }
+  .addmore__slider .slick-dots li.slick-active button:before {
+    color: var(--Primary, rgb(12, 135, 212)) !important;
+  }
+  .form__wrap {
+    background: var(--White-30, rgba(255, 255, 255, 0.1));
+  }
+  .form__lines .lines span {
+    background: var(--Black-5, rgba(0, 0, 0, 0.5));
+  }
+  .form__lines .lines span.active {
+    background: var(--Primary, rgb(12, 135, 212));
+  }
+  .form__lines .lines span.boll {
+    background: var(--Primary, rgb(12, 135, 212));
+  }
+  .form__numbers .minus {
+    background: var(--White-30, rgba(255, 255, 255, 0.8));
+  }
+  .form__check label .icon {
+    background: var(--White-30, rgba(255, 255, 255, 0.8));
+  }
+  .asked__right {
+    background: var(--White-30, rgba(255, 255, 255, 0.1));
+  }
+  .asked__right .icon {
+    background: var(--White-30, rgba(255, 255, 255, 0.8));
   }
 }
