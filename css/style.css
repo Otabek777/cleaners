@@ -2456,7 +2456,7 @@ h4 {
   .modal__close {
     width: 2.5rem;
     height: 2.5rem;
-    top: var(--max);
+    top: calc(var(--max) - 8px);
     right: var(--md);
   }
   .services__block {
@@ -2573,7 +2573,7 @@ h4 {
   .clean__tab .btn {
     min-height: 48px;
     font-size: 0.6rem;
-    padding: 0.25rem;
+    padding: 0.25rem 0.75rem;
     margin-right: 4px;
   }
   .clean__tab .btn span {
@@ -2645,7 +2645,45 @@ h4 {
     height: 2rem;
   }
 }
+@media screen and (max-width: 600px) {
+  .help {
+    bottom: 0;
+    right: 0;
+  }
+  .help__wrap {
+    width: 100vw;
+    border-radius: 0;
+  }
+  .help__open {
+    width: 3rem;
+    height: 3rem;
+    font-size: 13px;
+    -webkit-transform: translate(-1rem, -1rem);
+            transform: translate(-1rem, -1rem);
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  .help__open.open {
+    -webkit-transform: translate(-1.5rem, -370px);
+            transform: translate(-1.5rem, -370px);
+  }
+  .help__open.open + .help__wrap {
+    top: calc(-455px + 3rem);
+    height: 455px;
+  }
+  .help__admin .img {
+    width: 60px;
+    height: 60px;
+  }
+  .help__open::before, .help__open::after {
+    width: 1rem;
+  }
+}
 @media screen and (max-width: 360px) {
+  .help__admin .name {
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+  }
   .header__phone {
     font-size: var(--xs);
   }
@@ -2657,9 +2695,20 @@ h4 {
     width: 12px;
     margin-right: 0.5rem;
   }
+  .help__input .input {
+    font-size: 12px;
+    line-height: 13px;
+  }
+  .help__input .btn {
+    font-size: 12px;
+    line-height: 13px;
+  }
 }
 body.dark-mode {
   background: #000;
+}
+body.dark-mode .header.fixed .header__box {
+  background: #1A1A1A;
 }
 body.dark-mode .header__logo {
   background: url(../img/logo-black.svg) no-repeat center;
