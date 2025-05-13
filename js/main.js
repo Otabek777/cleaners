@@ -1,3 +1,51 @@
+// Lenis
+const lenis = new Lenis({
+    wrapper: document.querySelector('.scroll-container'),
+    lerp: 0.1,
+    duration: 1.2,
+    smoothTouch: true
+});
+lenis.on('scroll', e => {
+    console.log(e);
+});
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+// Animate on Scroll
+const animatedElements = document.querySelectorAll('.animate-on-scroll');
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        } else {
+            entry.target.classList.remove('is-visible');
+        }
+    });
+});
+animatedElements.forEach(el => observer.observe(el));
+
+// Tab
+function initTabs(containerSelector) {
+    $(containerSelector).each(function () {
+        const $container = $(this);
+        $container.find('.tabBtn').on('click', function () {
+            const target = $(this).data("target");
+            $container.find('.tabBtn').removeClass("active");
+            $container.find('.tabBlock').removeClass("active");
+            $(this).addClass("active");
+            $container.find("#" + target).addClass("active");
+        });
+    });
+}
+initTabs('.tabContainer');
 // Header Fixed
 $(window).on('scroll', function () {
     $(".header").toggleClass("fixed", $(this).scrollTop() > 50);
@@ -22,6 +70,19 @@ $(".asked__btn").on('click', function () {
 
 $(".help__open").click(function() {
     $(this).toggleClass("open");
+});
+
+const toggle = document.getElementById("toggleSwitch");
+const status = document.getElementById("status");
+const body = document.body;
+toggle.addEventListener("change", function () {
+    if (this.checked) {
+    body.classList.add("dark-mode");
+    status.textContent = "Ночной режим";
+    } else {
+    body.classList.remove("dark-mode");
+    status.textContent = "Светлый режим";
+    }
 });
 
 // Modal
@@ -68,45 +129,6 @@ document.querySelectorAll('.counter').forEach(counter => {
         if (value > 0) input.value = value - 1;
     });
 });
-
-// Lenis
-const lenis = new Lenis({
-    wrapper: document.querySelector('.scroll-container'),
-    lerp: 0.1,
-    duration: 1.2,
-    smoothTouch: true
-});
-
-lenis.on('scroll', e => {
-    console.log(e);
-});
-
-function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
-
-// Animate on Scroll
-const animatedElements = document.querySelectorAll('.animate-on-scroll');
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-        } else {
-            entry.target.classList.remove('is-visible');
-        }
-    });
-});
-
-animatedElements.forEach(el => observer.observe(el));
 
 // Slick Slider
 $('.befaft__slider').slick({
@@ -156,21 +178,6 @@ $('.addmore__slider').slick({
         }
     ]
 });
-
-// Tab
-function initTabs(containerSelector) {
-    $(containerSelector).each(function () {
-        const $container = $(this);
-        $container.find('.tabBtn').on('click', function () {
-            const target = $(this).data("target");
-            $container.find('.tabBtn').removeClass("active");
-            $container.find('.tabBlock').removeClass("active");
-            $(this).addClass("active");
-            $container.find("#" + target).addClass("active");
-        });
-    });
-}
-initTabs('.tabContainer');
 
 // After Before
 $(document).ready(function () {

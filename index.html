@@ -1542,19 +1542,5 @@
     <script src="slick-1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        const toggle = document.getElementById("toggleSwitch");
-        const status = document.getElementById("status");
-        const body = document.body;
-        toggle.addEventListener("change", function () {
-            if (this.checked) {
-            body.classList.add("dark-mode");
-            status.textContent = "Ночной режим";
-            } else {
-            body.classList.remove("dark-mode");
-            status.textContent = "Светлый режим";
-            }
-        });
-    </script>
 </body>
 </html>
