@@ -452,15 +452,16 @@ body.hide {
   padding: 0;
 }
 
-.modal__logo {
+.modal__logo2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 5.5rem;
 }
-.modal__logo img {
+.modal__logo2 img {
   width: 10rem;
 }
 
