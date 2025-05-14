@@ -43,6 +43,9 @@
 .help__open .svg {
     transition: all .3s ease;
 }
+.help__open .svg img {
+    width: 50%;
+}
 .help__open.open .svg {
     opacity: 0;
 }

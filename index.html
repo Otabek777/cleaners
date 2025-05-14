@@ -27,7 +27,10 @@
                 </ul>
                 <button class="header__lang" data-i18n="1">
                     Español
-                    <img src="img/header-lang.svg" alt="">
+                    <div>
+                        <img src="img/header-lang.svg" alt="">
+                        <img src="img/header-lang-dark.svg" alt="">
+                    </div>
                 </button>
                 <a href="tel:+737100 1010" class="header__phone" data-i18n="1">
                     <img src="img/header-phone.svg" alt="">
@@ -59,18 +62,21 @@
                             <span data-i18n="1">4.8</span>
                             <div class="img">
                                 <img src="img/banner-icon1.svg" alt="">
+                                <img src="img/banner-icon1-dark.svg" alt="">
                             </div>
                         </div>
                         <div class="banner__rating">
                             <span data-i18n="1">4.6</span>
                             <div class="img">
                                 <img src="img/banner-icon2.svg" alt="">
+                                <img src="img/banner-icon2-dark.svg" alt="">
                             </div>
                         </div>
                         <div class="banner__rating">
                             <span data-i18n="1">5.0</span>
                             <div class="img">
                                 <img src="img/banner-icon3.svg" alt="">
+                                <img src="img/banner-icon3-dark.svg" alt="">
                             </div>
                         </div>
                     </div>
@@ -963,6 +969,22 @@
                                                 </div>
                                                 Wall Cleaning
                                                 <span data-i18n="1">$ 100</span>
+                                                <div class="counter">
+                                                    <button class="minus">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="2" viewBox="0 0 8 2" fill="none">
+                                                            <path d="M3.5 0.5H4.5H7.5V1.5H4.5H3.5H0.5V0.5H3.5Z" fill="black"/>
+                                                        </svg>
+                                                    </button>
+                                                    <p>
+                                                        <input type="number" value="0" min="0" readonly>
+                                                        pc.
+                                                    </p>
+                                                    <button class="plus">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none">
+                                                            <path d="M3.5 3.5V0.5H4.5V3.5H7.5V4.5H4.5V7.5H3.5V4.5H0.5V3.5H3.5Z" fill="black"/>
+                                                        </svg>
+                                                    </button>
+                                                </div>
                                             </label>
                                         </div>
                                         <div class="form__check">
@@ -1448,7 +1470,7 @@
     <div class="help">
         <button class="help__open">
             <div class="svg">
-                SVG
+                <img src="img/support.svg" alt="">
             </div>
         </button>
         <div class="help__wrap">

@@ -144,6 +144,9 @@
     border: 0.0625rem solid rgb(201, 201, 201);
     border-radius: 3.125rem;
     transition: all .3s ease;
+    img:nth-child(2) {
+      display: none;
+    }
   }
   .header__lang:hover {
     background: #fff;
@@ -437,7 +440,7 @@
       padding: 0;
     }
   }
-  .modal__logo {
+  .modal__logo2 {
     display: flex;
     justify-content: center;
     margin-top: 5.5rem;
@@ -680,6 +683,11 @@
   
   .banner__rating {
     margin-right: 6rem;
+    .img {
+      img:nth-child(2) {
+        display: none;
+      }
+    }
   }
   
   .banner__rating span {
@@ -1756,6 +1764,58 @@
     position: absolute;
     z-index: -99;
   }
+  .form__check .counter {
+    max-width: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: -12px;
+    margin-right: -12px;
+    margin-bottom: -12px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    padding: 8px 0;
+    margin-left: 16px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: var(--White-50, rgba(255, 255, 255, 0.5));
+    transition: all .3s ease;
+    p {
+      display: flex;
+      align-items: center;
+      margin: 0 8px;
+    }
+    .plus, .minus {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 32px;
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      border: 0;
+    }
+    input {
+      width: 36px;
+      height: auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      background: transparent;
+      color: var(--White-100, rgba(255, 255, 255, 1));
+      border: 0;
+      margin-right: -8px;
+    }
+  }
+    .form__check input:checked + label .counter {
+      max-width: 160px;
+      padding: 8px;
+      border: 1px solid var(--Black-5, rgba(0, 0, 0, 0.05));
+    }
   
   .form__check label {
     display: -webkit-box;
@@ -2724,6 +2784,17 @@
 }
 body.dark-mode {
   background: #000;
+  .header__lang {
+    img:nth-child(1) {
+      display: none;
+    }
+    img:nth-child(2) {
+      display: block;
+    }
+  }
+  .header__lang:hover {
+    background: #142841;
+  }
   .header.fixed .header__box {
     background: #1A1A1A;
   }
@@ -2736,6 +2807,16 @@ body.dark-mode {
   }
   .header__burgir span {
     background: #fff;
+  }
+  .banner__rating {
+    .img {
+      img:nth-child(1) {
+        display: none;
+      }
+      img:nth-child(2) {
+        display: block;
+      }
+    }
   }
   .banner::after {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
